@@ -1,0 +1,369 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Gagan</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Gagan <i class="fas fa-gavel"></i></a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">ABout</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Projects</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead bg-primary text-white text-center">
+        {% for i in pic%}
+        <div class="container"><img class="img-fluid border rounded-circle d-block mx-auto mb-5" src="{{i.img}}" style="width: 222px;">
+        {%endfor%}
+            <h1 class="pulse animated">Gagandeep singh</h1>
+            <hr class="star-light">
+            <h2 class="bounce animated infinite font-weight-light mb-0">Web Developer&nbsp;</h2>
+        </div>
+    </header>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary" data-aos="flip-up">About</h2>
+            <hr class="star-dark mb-5">
+        </div>
+    </section>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p data-aos="fade-right" data-aos-delay="200"><br>
+                    <div data-aos="fade-right" data-aos-delay="100">
+                    {% for i in abtyou%}
+                    <h5>{{i.desc}}</h5>
+                    {%endfor%}
+                    </div>
+                    <br>
+                    <div data-aos="fade-right">
+                    <h1><strong>Personal Skills</strong></h1>
+                    {% for i in skil %}
+                    <li>{{i.skill}}</li>
+                    {%endfor%}
+                    </div>
+                    <br><br></p>
+                </div>
+                <div class="col-md-6">
+                    <h1 data-aos="fade-left"><strong>HIGHLIGHTS</strong><br></h1>
+                    <p></p>
+                    <ul data-aos="fade-left" data-aos-delay="250">
+                        {% for i in light %}
+                            <li>{{i.hl}}</li>
+                        {%endfor%}
+                        <!-- <li>B.tech in computer science<br></li>
+                        <li>Knowledge of Python&nbsp; (working on django)<br></li>
+                        <li>Knowledge of HTML5<br></li>
+                        <li>Knowledge of bootstrap<br></li>
+                        <li>Knowledge of&nbsp; JavaScript and jquery<br></li>
+                        <li>Knowledge of&nbsp;css<br></li> -->
+                    </ul>
+                    <div  data-aos="fade-left" data-aos-delay="250">
+                    <p data-aos="fade-left" data-aos-delay="250"><br> <div data-aos="fade-left" data-aos-delay="250"><h1><strong>Hobbies/Interests</strong></h1></div><br>
+                       
+                       <div data-aos="fade-left">
+                        {% for i in hoby%}
+                        <li><strong>{{i.hobby}}</strong></li>
+                        {%endfor%}
+                        </div>
+                        <br><br></p>
+                    </div>
+                    <p data-aos="fade-left" data-aos-delay="250"><br><h1 data-aos="fade-left"><strong>Personal Information</strong></h1><br>
+                       <div data-aos="fade-left">
+                        {% for i in pinfo%}
+                        <li> Date of Birth : {{i.date_birth}} </li>
+                        <li> Gender / Marital Status: {{i.gender_Marital_Status}} </li>
+                        <li> Language Proficiency: {{i.language}} </li>
+                        {%endfor%}
+                       </div>
+                        <br><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="about" class="bg-primary text-white mb-0">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-white" data-aos="zoom-in">Projects</h2>
+            <hr class="star-light mb-5">
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sr.no</th>
+                                    <th>Project Name</th>
+                                    <th>Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in projects%}
+                                <tr>
+                                    <td>{{i.id}}<br></td>
+                                    <td data-aos="fade" data-aos-delay="200"><strong>{{i.name}}   </strong><br></td>
+                                    <td><button type="button"  data-aos="fade" data-aos-delay="200" class="btn btn-success" data-toggle="modal" data-target="#modal{{i.id}}">
+                                       Detail
+                                      </button></td>
+                                </tr>
+                                {%endfor%}
+                                <!-- <tr>
+                                    <td>2.</td>
+                                    <td data-aos="fade" data-aos-delay="200"><strong>City Wheather and Map report (Django)</strong><br></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td data-aos="fade" data-aos-delay="200"><strong>Analyse of Breast Cancer dataset(ML)</strong><br></td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td data-aos="fade" data-aos-delay="200"><strong>Youtube Downloader(django)</strong><br></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4"></div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary mb-0" data-aos="flip-up">Contact Me</h2>
+            <hr class="star-dark mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" name="sentMessage" method="post" novalidate="novalidate">
+                        {% csrf_token%}
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><label>Name</label><input class="form-control" type="text" data-aos="fade-left" id="name" required="" name="name" placeholder="Name"><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><label>Email Address</label><input class="form-control" type="email" data-aos="fade-left" id="email"  name="email" required="" placeholder="Email Address"><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2"><label>Subject</label><input class="form-control" type="text" data-aos="fade-left" id="phone" required="" name="subject" placeholder="Subject"><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-5 pb-2"><textarea class="form-control" data-aos="fade-left" id="message" required="" name="message" placeholder="Message" rows="5"></textarea><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div id="success"></div>
+                        <div class="form-group"><button class="btn btn-primary btn-xl" data-aos="fade" id="sendMessageButton" type="submit">Send</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer text-center"></footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright ©&nbsp;Gagan 2020</small></div>
+    </div>
+    <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{% static 'assets/img/portfolio/cabin.png'%}">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                                    itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{% static 'assets/img/portfolio/cake.png'%}">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                                    itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{% static 'assets/img/portfolio/circus.png'%}">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                                    itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{% static 'assets/img/portfolio/game.png'%}">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                                    itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{% static 'assets/img/portfolio/safe.png'%}">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                                    itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{% static 'assets/img/portfolio/submarine.png'%}">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
+                                    itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+ {%for i in projects%}
+  <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg fade" id="modal{{i.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{i.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-12">
+                           <table class="table table-borderless table-hover">
+                               <tbody>
+                                   <tr>
+                                       <td><strong> Name</strong></td>
+                                       <td><strong>Frontend</strong></td>
+                                       <td><strong>Backend</strong></td>
+                                       
+                                   </tr>
+                                   <tr>
+                                       <td>{{i.name}}</td>
+                                       <td>{{i.frontend}}</td>
+                                       <td>{{i.backend}}</td>
+                                   </tr>
+                                   <tr>
+                                    <td><strong>Discription</strong></td>
+                                   </tr>
+                                   <tr>
+                                    <td>{{i.discripition}}</td>
+                                </tr>
+                               </tbody>
+                           </table> 
+                        
+                      </div>
+                      
+
+                  </div>
+
+              </div>
+
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+{%endfor%}
+      
+    <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js '%}"></script>
+    <script src="{% static 'assets/js/bs-init.js '%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{% static 'assets/js/freelancer.js'%}"></script>
+</body>
+
+</html>
