@@ -16,6 +16,7 @@
 </head>
 
 <body id="page-top">
+    <div class="container-fluid">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Gagan <i class="fas fa-gavel"></i></a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
@@ -29,10 +30,10 @@
         </div>
     </nav>
     <header class="masthead bg-primary text-white text-center">
-        {% for i in pic%}
+        {%for i in pic%}
         <div class="container"><img class="img-fluid border rounded-circle d-block mx-auto mb-5" src="{{i.img}}" style="width: 222px;">
         {%endfor%}
-            <h1 class="pulse animated">Gagandeep singh</h1>
+            <h1 class="pulse animated">Gagandeep Singh</h1>
             <hr class="star-light">
             <h2 class="bounce animated infinite font-weight-light mb-0">Web Developer&nbsp;</h2>
         </div>
@@ -354,6 +355,7 @@
         </div> -->
       </div>
     </div>
+  </div>
   </div>
 
 {%endfor%}
