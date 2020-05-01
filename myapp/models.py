@@ -44,6 +44,6 @@ class Personal_info(models.Model):
     def __str__(self):
         return self.gender_Marital_Status 
 class profile(models.Model):
-    img=models.ImageField(upload_to="static/profile/")
+    img=models.ImageField(upload_to="media/Profile/")
 
     

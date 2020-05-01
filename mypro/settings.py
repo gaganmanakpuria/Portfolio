@@ -17,7 +17,7 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 template_dir=os.path.join(BASE_DIR,"templates")
 static_dir=os.path.join(BASE_DIR,"static")
-
+Med
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -125,6 +125,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     static_dir,
 ]
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST ="smtp.gmail.com"
 EMAIL_PORT = 587
